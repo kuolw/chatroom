@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  server:
+    restart: always
+    image: phpswoole/swoole:php8.0-alpine
+    ports:
+      - 9501:9501
+    volumes:
+      - ./server:/var/www
+    command: php server/ws.php
